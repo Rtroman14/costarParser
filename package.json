@@ -1,0 +1,17 @@
+{
+  "name": "csvParser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^4.10.1",
+    "objects-to-csv": "^1.3.6"
+  },
+  "devDependencies": {},
+  "description": ""
+}
