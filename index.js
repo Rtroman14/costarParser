@@ -3,7 +3,7 @@ const path = require("path");
 const readFile = require("./src/readFile");
 
 let parseFiles = () => {
-    let inputDir = path.join(__dirname, "\\inputCSV");
+    let inputDir = path.join(__dirname, "inputCSV");
 
     fs.readdir(inputDir, (err, files) => {
         if (err) {
