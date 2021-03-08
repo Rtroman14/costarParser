@@ -5,7 +5,7 @@ module.exports = (csvData) => {
     let interval;
 
     csvData.forEach((row) => {
-        if (row.length > 3) {
+        if (row.length >= 3) {
             if (
                 row[0] === "Contact Name" ||
                 row[0].includes("Page") ||
@@ -22,14 +22,14 @@ module.exports = (csvData) => {
             }
             if (record && interval == 1) {
                 contact.name = row[0];
-                contact.phone = row[1];
+                contact["Phone Number"] = row[1];
                 contact.practice = row[2];
             } else if (record && interval == 2) {
                 contact.title = row[0];
-                contact.address = row[1];
-                contact.email = row[2];
+                contact.Address = row[1];
+                contact.Email = row[2];
             } else if (record && interval == 3) {
-                contact.company = row[0];
+                contact["Company Name"] = row[0];
                 contact.state = row[1];
                 contact.other = row[2];
             }
