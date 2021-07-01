@@ -23,18 +23,22 @@ module.exports = (csvData) => {
                 interval = 1;
             }
             if (record && interval == 1) {
-                contact.name = row[0];
+                contact["Full Name"] = row[0];
+                contact["First Name"] = row[0].split(" ")[0];
+                contact["Last Name"] = row[0].split(" ").slice(1).join(" ");
                 contact["Phone Number"] = row[1];
                 contact.practice = row[2];
             } else if (record && interval == 2) {
                 contact.title = row[0];
-                contact.Address = row[1];
-                contact.email = row[2];
+                contact.Street = row[1];
+                contact.Email = row[2];
                 email = row[2];
             } else if (record && interval == 3) {
                 contact["Company Name"] = row[0];
-                contact.state = row[1];
-                contact.email = `${contact.email}${row[2]}`;
+                contact.City = row[1].split(",")[0] || "";
+                contact.State = row[1].split(" ")[2] || "";
+                contact.Zip = row[1].split(" ").pop() || "";
+                contact.Email = `${contact.Email}${row[2]}`;
             }
             if (record) {
                 interval += 1;
